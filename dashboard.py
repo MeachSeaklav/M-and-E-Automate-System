@@ -76,15 +76,12 @@ def dashboard():
     # File uploader to allow users to upload their data
     uploaded_file = st.file_uploader("Upload your CSV file", type=["csv", "xlsx", "xls"])
 
-    if uploaded_file:
+    if uploaded_file is not None:
         try:
-            if uploaded_file.name.endswith('.csv'):
-                df = pd.read_csv(uploaded_file)
-            else:
-                df = pd.read_excel(uploaded_file)
-
+            df = pd.read_csv(uploaded_file)
             # Store the dataframe in session state
             st.session_state['df'] = df
+            # st.success("File uploaded successfully!")
         except Exception as e:
             st.error(f"Failed to read uploaded file: {e}")
     else:
