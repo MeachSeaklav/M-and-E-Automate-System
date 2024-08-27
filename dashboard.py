@@ -22,7 +22,7 @@ st.set_page_config(
 load_dotenv()
 
 # Set your OpenAI API key from environment variable
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = st.secrets('OPENAI_API_KEY')
 
 # Custom CSS for the buttons
 st.markdown("""
