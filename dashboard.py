@@ -74,7 +74,7 @@ def dashboard():
     )
 
     # File uploader to allow users to upload their data
-    uploaded_file = st.file_uploader("Upload your CSV file", type=["csv", "xlsx", "xls"])
+    uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
 
     if uploaded_file is not None:
         try:
